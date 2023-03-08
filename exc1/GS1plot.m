@@ -30,7 +30,7 @@ xlabel('x1'), ylabel('x2')
 set(gca,'Xtick',[0.5:0.5:2])
 set(gca,'Ytick',[0.5:0.5:2])
 hold on
-contour(x1vec, x2vec, g1, [0 0], 'k-')
+contour(x1vec, x2vec, g1, [0 0], 'g-')
 contour(x1vec, x2vec, g2, [0 0], 'k-')
 contour(x1vec, x2vec, g3, [0 0], 'k-') % Very small bump for small x1,x2
 contour(x1vec, x2vec, g4, [0 0], 'k-') % Not visable

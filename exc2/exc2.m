@@ -1,26 +1,4 @@
 clear all, close all, clc
-% yalmip('clear')
-% n = 5;
-% m = 5;
-% P = sdpvar(n,m,'full');
-% Constraints = [sum(sum(P)) >= 3];
-% for i = 1 : 3
-% Constraints = [Constraints, P(i,i) + P(i+1,i+1) <= P(i+2,i+2)];
-% end
-% my_tolerance_for_strict = 1e-3;
-% F = [0 <= P(1,1) <= 2-my_tolerance_for_strict];
-% 
-% Objective = norm(P,1);
-% options = sdpsettings('verbose',1,'solver','gurobi',...
-% 'quadprog.maxiter',100);
-% sol = optimize(Constraints,Objective,options);
-% if sol.problem == 0
-% solution = value(P);
-% else
-% display('Hmm, something went wrong!');
-% sol.info
-% yalmiperror(sol.problem)
-% end
 %% Doing yourself
 %Cleaning yalmip workspace
 yalmip('clear')
@@ -31,7 +9,7 @@ x2 = sdpvar(1,1);
 Constraints = [
     (-x1 -x2 <=0)
     ((x1)^2 + (x2)^2 - 9 <= 0)
-    -x1^2 -x2^2 + 4 <= 0
+    (-x1^2 -x2^2 + 4 <= 0)
 ];
 Objective = (x1)^2+2*(x2)^2;
 % Setting options for YALMIP and solver
